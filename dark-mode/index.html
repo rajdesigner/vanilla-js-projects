@@ -9,8 +9,8 @@
 
 	<title>Dark Mode | Vanilla JS Projects</title>
 
-  <link rel="stylesheet" crossorigin href="../assets/pico.css">
-  <link rel="stylesheet" crossorigin href="../assets/darklight.css">
+  <link rel="stylesheet"  href="../assets/pico.css">
+  <link rel="stylesheet"  href="../assets/darklight.css">
 </head>
 
 <body class="container grid">
@@ -40,6 +40,14 @@
 
 	</footer>
 	<script id="theme.js">
+		const checkedbutton = document.getElementById('toggle');
+
+		checkedbutton.addEventListener('change', () => {
+			var doc = document.documentElement;
+			let currentTheme = doc.getAttribute('data-theme');
+			let appliedTheme = currentTheme === 'dark'? 'light': 'dark';
+			doc.setAttribute('data-theme', appliedTheme);
+		})
 
 	</script>
 </body>
